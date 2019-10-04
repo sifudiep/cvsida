@@ -1,0 +1,115 @@
+.experiences {
+    background: $color-grey-light-1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(9, 5vw);
+    grid-gap: 2rem;
+    padding: 1.5rem;
+    grid-template-areas: "csharp csharp csharp reactjs reactjs reactjs nodejs nodejs"
+                         "csharp csharp csharp reactjs reactjs reactjs nodejs nodejs"
+                         "csharp csharp csharp reactjs reactjs reactjs nodejs nodejs"
+                         "csharp csharp csharp html5 html5 html5 html5 html5"
+                         "js js js html5 html5 html5 html5 html5"
+                         "js js js html5 html5 html5 html5 html5"
+                         "js js js css3 css3 css3 css3 css3"
+                         "js js js css3 css3 css3 css3 css3"
+                         "js js js css3 css3 css3 css3 css3";
+
+    &__item {
+        &--1 {
+            grid-area: csharp;
+            animation: fadein .3s;
+            &:hover {
+                animation: fadeout .3s;
+                animation-fill-mode: forwards;
+            }
+        }
+        &--2 {
+            grid-area: html5;
+            animation: fadein .3s;
+            &:hover {
+                animation: fadeout .3s;
+                animation-fill-mode: forwards;
+            }
+        }
+        &--3 {
+            grid-area: js;
+            animation: fadein .3s;
+            &:hover {
+                animation: fadeout .3s;
+                animation-fill-mode: forwards;
+            }
+        }
+        &--4 {
+            grid-area: css3;
+            animation: fadein .3s;
+            &:hover {
+                animation: fadeout .3s;
+                animation-fill-mode: forwards;
+            }
+        }
+        &--5 {
+            grid-area: nodejs;
+            animation: fadein .3s;
+            &:hover {
+                animation: fadeout .3s;
+                animation-fill-mode: forwards;
+            }
+        }
+        &--6 {
+            grid-area: reactjs;
+            animation: fadein .3s;
+            &:hover {
+                animation: fadeout .3s;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: $bp-lg) {
+    .experiences {
+        grid-template-rows: repeat(3, 5vh);
+        grid-template-areas: "nodejs nodejs nodejs nodejs nodejs nodejs nodejs nodejs"
+                             "nodejs nodejs nodejs nodejs nodejs nodejs nodejs nodejs"
+                             "nodejs nodejs nodejs nodejs nodejs nodejs nodejs nodejs"
+                             "html5 html5 html5 html5 html5 html5 html5 html5"
+                             "css3 css3 css3 css3 css3 css3 css3 css3"
+                             "css3 css3 css3 css3 css3 css3 css3 css3"
+                             "js js js js csharp csharp csharp csharp"
+                             "js js js js csharp csharp csharp csharp"
+                             "js js js js csharp csharp csharp csharp"
+                             "js js js js csharp csharp csharp csharp"                             
+                             "reactjs reactjs reactjs reactjs reactjs reactjs reactjs reactjs"
+                             "reactjs reactjs reactjs reactjs reactjs reactjs reactjs reactjs"
+                             "reactjs reactjs reactjs reactjs reactjs reactjs reactjs reactjs";                             
+                             
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
