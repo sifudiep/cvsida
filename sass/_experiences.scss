@@ -2,65 +2,103 @@
     background: $color-grey-light-1;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(9, 5vw);
+    grid-template-rows: repeat(9, 5vh);
     grid-gap: 2rem;
     padding: 1.5rem;
     grid-template-areas: "csharp csharp csharp reactjs reactjs reactjs nodejs nodejs"
                          "csharp csharp csharp reactjs reactjs reactjs nodejs nodejs"
                          "csharp csharp csharp reactjs reactjs reactjs nodejs nodejs"
-                         "csharp csharp csharp html5 html5 html5 html5 html5"
-                         "js js js html5 html5 html5 html5 html5"
-                         "js js js html5 html5 html5 html5 html5"
+                         "csharp csharp csharp mongodb mongodb html5 html5 html5"
+                         "js js js mongodb mongodb html5 html5 html5"
+                         "js js js mongodb mongodb html5 html5 html5"
                          "js js js css3 css3 css3 css3 css3"
                          "js js js css3 css3 css3 css3 css3"
                          "js js js css3 css3 css3 css3 css3";
 
     &__item {
+        box-shadow: $boxShadow;
         &--1 {
             grid-area: csharp;
-            animation: fadein .3s;
+            animation: condense .3s;
             &:hover {
-                animation: fadeout .3s;
+                animation: enlarge .3s;
+                animation-fill-mode: forwards;
+            }
+            &:active {
+                animation: godown .15s;
                 animation-fill-mode: forwards;
             }
         }
         &--2 {
             grid-area: html5;
-            animation: fadein .3s;
+            animation: condense .3s;
             &:hover {
-                animation: fadeout .3s;
+                animation: enlarge .3s;
+                animation-fill-mode: forwards;
+            }
+            &:active {
+                animation: godown .15s;
                 animation-fill-mode: forwards;
             }
         }
         &--3 {
             grid-area: js;
-            animation: fadein .3s;
+            animation: condense .3s;
+            z-index: 1;
             &:hover {
-                animation: fadeout .3s;
+                animation: enlarge .3s;
+                animation-fill-mode: forwards;
+            }
+            &:active {
+                animation: godown .15s;
                 animation-fill-mode: forwards;
             }
         }
         &--4 {
             grid-area: css3;
-            animation: fadein .3s;
+            animation: condense .3s;
             &:hover {
-                animation: fadeout .3s;
+                animation: enlarge .3s;
+                animation-fill-mode: forwards;
+            }
+            &:active {
+                animation: godown .15s;
                 animation-fill-mode: forwards;
             }
         }
         &--5 {
             grid-area: nodejs;
-            animation: fadein .3s;
+            animation: condense .3s;
             &:hover {
-                animation: fadeout .3s;
+                animation: enlarge .3s;
+                animation-fill-mode: forwards;
+            }
+            &:active {
+                animation: godown .15s;
                 animation-fill-mode: forwards;
             }
         }
         &--6 {
             grid-area: reactjs;
-            animation: fadein .3s;
+            animation: condense .3s;
             &:hover {
-                animation: fadeout .3s;
+                animation: enlarge .3s;
+                animation-fill-mode: forwards;
+            }
+            &:active {
+                animation: godown .15s;
+                animation-fill-mode: forwards;
+            }
+        }
+        &--7 {
+            grid-area: mongodb;
+            animation: condense .3s;
+            &:hover {
+                animation: enlarge .3s;
+                animation-fill-mode: forwards;
+            }
+            &:active {
+                animation: godown .15s;
                 animation-fill-mode: forwards;
             }
         }
@@ -76,40 +114,48 @@
 
 @media only screen and (max-width: $bp-lg) {
     .experiences {
-        grid-template-rows: repeat(3, 5vh);
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(9, 10vh);
         grid-template-areas: "nodejs nodejs nodejs nodejs nodejs nodejs nodejs nodejs"
                              "nodejs nodejs nodejs nodejs nodejs nodejs nodejs nodejs"
-                             "nodejs nodejs nodejs nodejs nodejs nodejs nodejs nodejs"
-                             "html5 html5 html5 html5 html5 html5 html5 html5"
+                             "mongodb mongodb mongodb mongodb html5 html5 html5 html5"
                              "css3 css3 css3 css3 css3 css3 css3 css3"
                              "css3 css3 css3 css3 css3 css3 css3 css3"
-                             "js js js js csharp csharp csharp csharp"
-                             "js js js js csharp csharp csharp csharp"
                              "js js js js csharp csharp csharp csharp"
                              "js js js js csharp csharp csharp csharp"                             
-                             "reactjs reactjs reactjs reactjs reactjs reactjs reactjs reactjs"
                              "reactjs reactjs reactjs reactjs reactjs reactjs reactjs reactjs"
                              "reactjs reactjs reactjs reactjs reactjs reactjs reactjs reactjs";                             
                              
     }
 }
 
-@keyframes fadeout {
+@keyframes enlarge {
     from {
-        opacity: 1;
+        transform: translateY(0);   
+        box-shadow: $boxShadow;
     }
-
     to {
-        opacity: 0;
+        transform: translateY(-.5rem);
+        box-shadow: $boxShadow-elevate;
     }
 }
 
-@keyframes fadein {
+@keyframes condense {
     from {
-        opacity: 0;
+        transform: translateY(-.5rem);
+        box-shadow: $boxShadow-elevate;
     }
-
     to {
-        opacity: 1;
+        transform: translateY(0);
+        box-shadow: $boxShadow;
+    }
+}
+
+@keyframes godown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(.75rem);
     }
 }
